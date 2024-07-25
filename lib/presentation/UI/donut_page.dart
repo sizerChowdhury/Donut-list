@@ -1,12 +1,8 @@
-import 'package:flutter/cupertino.dart';
+import 'package:donut_list/presentation/bloc/donut_bloc.dart';
+import 'package:donut_list/presentation/bloc/donut_event.dart';
+import 'package:donut_list/presentation/bloc/donut_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../bloc/donut_bloc.dart';
-import '../bloc/donut_event.dart';
-import '../bloc/donut_state.dart';
-
-
 
 class DonutPage extends StatefulWidget {
   const DonutPage({super.key});
@@ -40,14 +36,10 @@ class _FavouriteScreenState extends State<DonutPage> {
                 itemCount: state.donuts.length,
                 itemBuilder: (context, index) {
                   final donut = state.donuts[index];
-                  return InkWell(
-                    onTap: () {
-                    },
-                    child: Card(
-                      child: ListTile(
-                        title: Text(donut.name),
-                        subtitle: Text('Type: ${donut.id}, Price: ${donut.ppu}'),
-                      ),
+                  return Card(
+                    child: ListTile(
+                      title: Text(donut.name),
+                      subtitle: Text('Type: ${donut.id}, Price: ${donut.ppu}'),
                     ),
                   );
                 },

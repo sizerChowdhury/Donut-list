@@ -8,4 +8,3 @@ class DonutEvent extends Equatable {
 }
 
 class FetchDonutList extends DonutEvent {}
-

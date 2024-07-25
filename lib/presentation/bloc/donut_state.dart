@@ -1,20 +1,20 @@
-
+import 'package:donut_list/data/models/donut_model.dart';
 import 'package:equatable/equatable.dart';
 
-import '../model/donuts_model.dart';
+
 
 enum ListStatues { loading, success, failure }
 
 class DonutState extends Equatable {
-  ListStatues listStatus;
-  List<Donut> donuts;
+  final ListStatues listStatus;
+  final List<DonutModel> donuts;
 
-  DonutState({
+  const DonutState({
     this.listStatus = ListStatues.loading,
     this.donuts = const [],
   });
 
-  DonutState copyWith({List<Donut>? donuts, ListStatues? listStatus}) {
+  DonutState copyWith({List<DonutModel>? donuts, ListStatues? listStatus}) {
     return DonutState(
       donuts: donuts ?? this.donuts,
       listStatus: listStatus ?? this.listStatus,
